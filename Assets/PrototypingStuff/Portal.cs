@@ -6,9 +6,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour
 {
     public Portal TwinPortal;
-    public Camera temp;
-    
-    private Camera cam;
+    public List<Portal> visiblePortals = new List<Portal>();
     private MeshRenderer rend;
     private Material mat;
     private RenderTexture rt;
@@ -18,7 +16,6 @@ public class Portal : MonoBehaviour
     private List<Teleportable> ableToTeleport = new List<Teleportable>();
     void Start()
     {
-        cam = GetComponentInChildren<Camera>();
         rend = GetComponentInChildren<MeshRenderer>();
         mat = new Material(rend.material);
         rt = new RenderTexture(Screen.height,Screen.width,1,RenderTextureFormat.ARGB32);
@@ -30,23 +27,10 @@ public class Portal : MonoBehaviour
     private bool setTexture = false;
     void Update()
     {
-        if(!setTexture && cam != null)
-        {
-            cam.targetTexture?.Release();
-            cam.targetTexture = rt;
-            setTexture = true;
-        }
-        cam.gameObject.SetActive(rend.isVisible);
-        cam.projectionMatrix = GameController.Instance.mainCamera.cam.projectionMatrix;
-        Vector3 relativePosition = transform.InverseTransformPoint(GameController.Instance.mainCamera.transform.position);
-        relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
-        cam.transform.position = TwinPortal.transform.TransformPoint(relativePosition);
-        cam.transform.rotation = (Quaternion.Euler(0,180,0) * TwinPortal.transform.rotation) * Quaternion.Inverse(transform.rotation) * GameController.Instance.mainCamera.transform.rotation;
-        RecalculateWorldToCameraMatrix();
-        cam.cullingMatrix = cullingProjectionMatrix * cullingWorldToCameraMatrix;
         if(rend.isVisible)
         {
-            for(int i = ableToTeleport.Count - 1; i >= 0; i--)
+            RenderTexture(GameController.Instance.mainCamera.transform.position, GameController.Instance.mainCamera.transform.rotation,GameController.Instance.mainCamera, PortalManager.Instance.recursionCount);
+            for (int i = ableToTeleport.Count - 1; i >= 0; i--)
             {
                 Teleportable teleportable = ableToTeleport[i];
                 Vector3 altLocation = TwinPortal.transform.position + (TwinPortal.transform.rotation * (teleportable.transform.position - transform.position));
@@ -93,6 +77,50 @@ public class Portal : MonoBehaviour
         //  new Vector3(1, 1, -1)
         //)
         #endregion
+    }
+
+    private void LateUpdate()
+    {
+        PortalManager.Instance.ReleaseAllTextures();
+    }
+
+    public void RenderTexture(Vector3 campos, Quaternion camrot, PortalCamera pcam, int depth)
+    {
+        if (depth <= 0)
+            return;
+        
+        //Render others
+        Camera cam = PortalManager.Instance.portalRenderCamera.cam;
+        cam.enabled = true;
+        Vector3 relativePosition = transform.InverseTransformPoint(campos);
+        relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
+        cam.transform.position = TwinPortal.transform.TransformPoint(relativePosition);
+        cam.transform.rotation = (Quaternion.Euler(0, 180, 0) * TwinPortal.transform.rotation) * Quaternion.Inverse(transform.rotation) * camrot;
+        foreach (Portal p in TwinPortal.visiblePortals)
+        {
+            p.RenderTexture(cam.transform.position,cam.transform.rotation,pcam, depth - 1);
+        }
+
+        //Render self
+        cam.enabled = true;
+        cam.projectionMatrix = pcam.cam.projectionMatrix;
+        relativePosition = transform.InverseTransformPoint(campos);
+        relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
+        cam.transform.position = TwinPortal.transform.TransformPoint(relativePosition);
+        cam.transform.rotation = (Quaternion.Euler(0, 180, 0) * TwinPortal.transform.rotation) * Quaternion.Inverse(transform.rotation) * camrot;
+        RecalculateWorldToCameraMatrix();
+        cam.cullingMatrix = cullingProjectionMatrix * cullingWorldToCameraMatrix;
+        PoolItem texture = PortalManager.Instance.GetTexture();
+        cam.targetTexture = texture.Texture;
+        cam.Render();
+        mat.SetTexture("_MainTex", texture.Texture);
+        cam.targetTexture = null;   
+        cam.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        rt?.Release();
     }
 
     private void OnTriggerEnter(Collider other)
