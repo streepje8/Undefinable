@@ -13,7 +13,7 @@ public class Portal : MonoBehaviour
     private Material mat;
     private RenderTexture rt;
     private readonly Matrix4x4 cullingProjectionMatrix = Matrix4x4.Perspective(60, 1, 1.95f, 1000f);
-    private Matrix4x4 culllingWorldToCameraMatrix;
+    private Matrix4x4 cullingWorldToCameraMatrix;
     private BoxCollider pCollider;
     private List<Teleportable> ableToTeleport = new List<Teleportable>();
     void Start()
@@ -43,10 +43,10 @@ public class Portal : MonoBehaviour
         cam.transform.position = TwinPortal.transform.TransformPoint(relativePosition);
         cam.transform.rotation = (Quaternion.Euler(0,180,0) * TwinPortal.transform.rotation) * Quaternion.Inverse(transform.rotation) * GameController.Instance.mainCamera.transform.rotation;
         RecalculateWorldToCameraMatrix();
-        cam.cullingMatrix = cullingProjectionMatrix * culllingWorldToCameraMatrix;
+        cam.cullingMatrix = cullingProjectionMatrix * cullingWorldToCameraMatrix;
         if(rend.isVisible)
         {
-            for(int i = 0; i < ableToTeleport.Count; i++)
+            for(int i = ableToTeleport.Count - 1; i >= 0; i--)
             {
                 Teleportable teleportable = ableToTeleport[i];
                 Vector3 altLocation = TwinPortal.transform.position + (TwinPortal.transform.rotation * (teleportable.transform.position - transform.position));
@@ -67,8 +67,6 @@ public class Portal : MonoBehaviour
                 }
             }
         }
-        Debug.DrawLine(transform.position, transform.position + PortalManager.Instance.teleportables[0].direction.normalized * 3, Color.green);
-        Debug.DrawLine(transform.position, transform.position + -(PortalManager.Instance.teleportables[0].transform.position - transform.position).normalized * 3, Color.blue);
         #region COMMENTS
         //Failed attempts
         /*
@@ -87,6 +85,13 @@ public class Portal : MonoBehaviour
         cam.transform.forward = TwinPortal.transform.TransformDirection(relativeRotation);
         */
         //cam.nearClipPlane = Mathf.Clamp(Vector3.Distance(cam.transform.position, TwinPortal.transform.position) - headSpace,0.000000001f,1000f);
+
+        //In the RecalculateWorldToCameraMatrix function:
+        //Matrix4x4.TRS(
+        //TwinPortal.transform.position + (), //FLIP THE Y AXIS BECAUSE UNITY HAS Y POSITIVE IS UP BUT OPENGL HAS Y POSITIVE IS DOWN
+        //  Quaternion.identity,
+        //  new Vector3(1, 1, -1)
+        //)
         #endregion
     }
 
@@ -110,21 +115,11 @@ public class Portal : MonoBehaviour
 
     void RecalculateWorldToCameraMatrix()
     {
-        culllingWorldToCameraMatrix = Matrix4x4.Inverse(Matrix4x4.TRS(
-          TwinPortal.transform.position + (TwinPortal.transform.rotation * new Vector3(0, -1.82f, 1.93f)), //FLIP THE Y AXIS BECAUSE UNITY HAS Y POSITIVE IS UP BUT OPENGL HAS Y POSITIVE IS DOWN
-          Quaternion.identity,
-          new Vector3(1, 1, -1)
-        ));
+        Matrix4x4 mat = TwinPortal.transform.localToWorldMatrix;
+        Vector3 offset = TwinPortal.transform.rotation * new Vector3(0, -1.82f, 2.5f);
+        mat.m03 += offset.x;
+        mat.m13 += offset.y;
+        mat.m23 += offset.z;
+        cullingWorldToCameraMatrix = Matrix4x4.Inverse(mat);
     }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(0.75f, 0.0f, 0.0f, 0.75f);
-
-        // Convert the local coordinate values into world
-        // coordinates for the matrix transformation.
-        Gizmos.matrix = transform.localToWorldMatrix * culllingWorldToCameraMatrix;
-        Gizmos.DrawCube(Vector3.forward * 2, Vector3.one);
-    }
-
 }
