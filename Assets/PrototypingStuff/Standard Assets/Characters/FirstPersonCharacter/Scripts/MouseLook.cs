@@ -27,6 +27,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CameraTargetRot = camera.localRotation;
         }
 
+        public void PerformRotation(Quaternion q)
+        {
+            Vector3 euler = q.eulerAngles;
+            //TODO FIX THIS
+            m_CharacterTargetRot *= Quaternion.Euler(0, -euler.y, 0);
+            m_CameraTargetRot *= Quaternion.Euler(-euler.x, 0, -euler.z);
+        }
 
         public void LookRotation(Transform character, Transform camera)
         {

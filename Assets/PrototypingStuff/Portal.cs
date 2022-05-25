@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,26 +31,6 @@ public class Portal : MonoBehaviour
         if(rend.isVisible)
         {
             RenderTexture(GameController.Instance.mainCamera.transform.position, GameController.Instance.mainCamera.transform.rotation,GameController.Instance.mainCamera, PortalManager.Instance.recursionCount);
-            for (int i = ableToTeleport.Count - 1; i >= 0; i--)
-            {
-                Teleportable teleportable = ableToTeleport[i];
-                Vector3 altLocation = TwinPortal.transform.position + (TwinPortal.transform.rotation * (teleportable.transform.position - transform.position));
-                if(Vector3.Dot(teleportable.direction.normalized, -(teleportable.transform.position - transform.position).normalized) > 0f) //Player moving towards this portal
-                {
-                    CharacterController cont = teleportable.GetComponent<CharacterController>();
-                    if (cont != null)
-                    {
-                        cont.enabled = false;
-                        teleportable.transform.position = altLocation;
-                        cont.enabled = true;
-                    }
-                    else 
-                    { 
-                        teleportable.transform.position = altLocation;
-                    }
-                    ableToTeleport.Remove(teleportable);
-                }
-            }
         }
         #region COMMENTS
         //Failed attempts
@@ -77,6 +58,42 @@ public class Portal : MonoBehaviour
         //  new Vector3(1, 1, -1)
         //)
         #endregion
+    }
+
+
+    private void FixedUpdate()
+    {
+        if(rend.isVisible)
+        {
+            for (int i = ableToTeleport.Count - 1; i >= 0; i--)
+            {
+                Teleportable teleportable = ableToTeleport[i];
+                Vector3 altLocation = TransformPositionBetweenPortals(this, TwinPortal, teleportable.transform.position);
+                Quaternion altRotation = TransformRotationBetweenPortals(this, TwinPortal, teleportable.transform.rotation);
+                if (Vector3.Dot(transform.forward, (teleportable.transform.position - transform.position).normalized) > -Mathf.Epsilon) //Player moved through
+                {
+                    CharacterController cont = teleportable.GetComponent<CharacterController>();
+                    if (cont != null)
+                    {
+                        cont.enabled = false;
+                        teleportable.transform.position = altLocation;
+                        teleportable.transform.rotation = altRotation;
+                        cont.enabled = true;
+                    }
+                    else
+                    {
+                        teleportable.transform.position = altLocation;
+                        teleportable.transform.rotation = altRotation;
+                    }
+                    ITeleportListener[] bois = teleportable.GetComponents<ITeleportListener>();
+                    for(int j = 0; j < bois.Length; j++)
+                    {
+                        bois[j].OnTeleport(TransformPositionBetweenPortals(this, TwinPortal, Vector3.zero), TransformRotationBetweenPortals(this,TwinPortal,Quaternion.identity));
+                    }
+                    ableToTeleport.Remove(teleportable);
+                }
+            }
+        }   
     }
 
     private void LateUpdate()
@@ -131,6 +148,7 @@ public class Portal : MonoBehaviour
             ableToTeleport.Add(tel);
         }
     }
+    
     private void OnTriggerExit(Collider other)
     {
         Teleportable tel = other.GetComponent<Teleportable>();
@@ -149,5 +167,19 @@ public class Portal : MonoBehaviour
         mat.m13 += offset.y;
         mat.m23 += offset.z;
         cullingWorldToCameraMatrix = Matrix4x4.Inverse(mat);
+    }
+
+    public static Vector3 TransformPositionBetweenPortals(Portal sender, Portal target, Vector3 position)
+    {
+        return
+            position - sender.transform.position + target.transform.position;
+    }
+
+    public static Quaternion TransformRotationBetweenPortals(Portal sender, Portal target, Quaternion rotation)
+    {
+        return
+            target.transform.rotation *
+            (Quaternion.Inverse(sender.transform.rotation) *
+            rotation);
     }
 }
