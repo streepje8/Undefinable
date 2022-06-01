@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class Teleportable : MonoBehaviour
 {
-    internal Vector3 direction = Vector3.zero;
-    private Vector3 lastpos = Vector3.zero;
+    private bool teleported;
+    private Quaternion lastRotationChange;
+    private Vector3 lastPositionChange;
+
+    private Rigidbody rb;
     private void OnEnable()
     {
         PortalManager.Instance.teleportables.Add(this);
-        direction = Vector3.zero;
-        lastpos = transform.position;
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public void OnTeleport(Portal sender, Portal dest, Vector3 positionChange, Quaternion rotationChange)
+    {
+        teleported = true;
+        lastPositionChange = positionChange;
+        lastRotationChange = rotationChange;
+        rb.velocity = dest.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * rb.velocity);
     }
 
     private void FixedUpdate()
     {
-        direction = transform.position - lastpos;
-        lastpos = transform.position;
     }
 
     private void OnDisable()
@@ -24,6 +32,14 @@ public class Teleportable : MonoBehaviour
         if(PortalManager.Instance.teleportables.Contains(this))
         {
             PortalManager.Instance.teleportables.Remove(this);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(rb != null)
+        {
+            Debug.DrawLine(transform.position,transform.position + rb.velocity * 100);
         }
     }
 }

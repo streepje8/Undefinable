@@ -70,7 +70,7 @@ public class Portal : MonoBehaviour
                 Teleportable teleportable = ableToTeleport[i];
                 Vector3 altLocation = TransformPositionBetweenPortals(this, TwinPortal, teleportable.transform.position);
                 Quaternion altRotation = TransformRotationBetweenPortals(this, TwinPortal, teleportable.transform.rotation);
-                if (Vector3.Dot(transform.forward, (teleportable.transform.position - transform.position).normalized) > -Mathf.Epsilon) //Player moved through
+                if (Vector3.Dot(transform.forward, (teleportable.transform.position - transform.position).normalized) > Mathf.Epsilon) //Player moved through
                 {
                     CharacterController cont = teleportable.GetComponent<CharacterController>();
                     if (cont != null)
@@ -85,6 +85,7 @@ public class Portal : MonoBehaviour
                         teleportable.transform.position = altLocation;
                         teleportable.transform.rotation = altRotation;
                     }
+                    teleportable.OnTeleport(this, TwinPortal, TransformPositionBetweenPortals(this, TwinPortal, Vector3.zero), TransformRotationBetweenPortals(this, TwinPortal, Quaternion.identity));
                     ITeleportListener[] bois = teleportable.GetComponents<ITeleportListener>();
                     for(int j = 0; j < bois.Length; j++)
                     {
@@ -171,8 +172,7 @@ public class Portal : MonoBehaviour
 
     public static Vector3 TransformPositionBetweenPortals(Portal sender, Portal target, Vector3 position)
     {
-        return
-            position - sender.transform.position + target.transform.position;
+        return target.transform.position + target.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * (position - sender.transform.position)); //position - sender.transform.position
     }
 
     public static Quaternion TransformRotationBetweenPortals(Portal sender, Portal target, Quaternion rotation)
