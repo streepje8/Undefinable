@@ -1,7 +1,7 @@
-Shader "Unlit/StencilPortal"
+Shader "Unlit/StencilFilter"
 {
     Properties{
-        [IntRange]_PortalID("Portal ID", Range(0,255)) = 0
+        [IntRange]_PortalID("Filter ID", Range(0,255)) = 0
     }
 
     SubShader
