@@ -18,7 +18,7 @@ public class PortalManager : Singleton<PortalManager>
     public int maxTexturePoolSize = 100;
     private List<PoolItem> pool = new List<PoolItem>();
 
-    public List<Teleportable> teleportables = new List<Teleportable>();
+    [HideInInspector]public List<Teleportable> teleportables = new List<Teleportable>();
     private void Awake()
     {
         Instance = this;

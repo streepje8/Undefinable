@@ -25,7 +25,7 @@ public class Portal : MonoBehaviour
         RecalculateWorldToCameraMatrix();
         pCollider = GetComponent<BoxCollider>();
     }
-    private bool setTexture = false;
+
     void Update()
     {
         if(rend.isVisible)

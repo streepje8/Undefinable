@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boi
-  m_Shader: {fileID: 4800000, guid: fcd3c563048f81842ab3be7d4f183346, type: 3}
+  m_Name: StencilFilterMat
+  m_Shader: {fileID: 4800000, guid: 5e23a71e66bd6f34ea006339b02063ef, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,11 +18,7 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ee12d2bc9f5c8554d97d5beb9dc4b275, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
     - _PortalID: 1
     m_Colors: []
