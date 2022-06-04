@@ -20,13 +20,18 @@ public class Teleportable : MonoBehaviour
         teleported = true;
         lastPositionChange = positionChange;
         lastRotationChange = rotationChange;
-        rb.velocity = dest.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * rb.velocity);
-    }
 
-    private void FixedUpdate()
-    {
+        //Solution from https://answers.unity.com/questions/60709/portal-physics-effect.html
+        if (rb != null)
+        {
+            var velocity = rb.velocity;
+            velocity = Vector3.Reflect(velocity, sender.transform.forward);
+            velocity = sender.transform.InverseTransformDirection(velocity);
+            velocity = dest.transform.TransformDirection(velocity);
+            rb.velocity = velocity;
+        }
+        //rb.velocity = dest.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * rb.velocity);
     }
-
     private void OnDisable()
     {
         if(PortalManager.Instance.teleportables.Contains(this))
