@@ -30,7 +30,7 @@ public class Portal : MonoBehaviour
     {
         if(rend.isVisible)
         {
-            RenderTexture(GameController.Instance.mainCamera.transform.position, GameController.Instance.mainCamera.transform.rotation,GameController.Instance.mainCamera, PortalManager.Instance.recursionCount);
+            RenderTexture(PortalManager.Instance.mainCamera.transform.position, PortalManager.Instance.mainCamera.transform.rotation, PortalManager.Instance.mainCamera, PortalManager.Instance.recursionCount);
         }
         #region COMMENTS
         //Failed attempts
