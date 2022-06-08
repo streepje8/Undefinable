@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Teleportable : MonoBehaviour
 {
-    private bool teleported;
     private Quaternion lastRotationChange;
     private Vector3 lastPositionChange;
 
@@ -17,7 +16,6 @@ public class Teleportable : MonoBehaviour
 
     public void OnTeleport(Portal sender, Portal dest, Vector3 positionChange, Quaternion rotationChange)
     {
-        teleported = true;
         lastPositionChange = positionChange;
         lastRotationChange = rotationChange;
 
