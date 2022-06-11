@@ -10,7 +10,7 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (listeningLayer == (listeningLayer | (1 << other.gameObject.layer)))
+        if (listeningLayer == (listeningLayer | (1 << other.gameObject.layer))) //Check if the object is on the listening layer
         {
             triggerEnterEvent?.Raise();
             triggerInteractEvent?.Raise();
@@ -19,15 +19,10 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (listeningLayer == (listeningLayer | (1 << other.gameObject.layer)))
+        if (listeningLayer == (listeningLayer | (1 << other.gameObject.layer))) //Check if the object is on the listening layer
         {
             triggerExitEvent?.Raise();
             triggerInteractEvent?.Raise();
         }
-    }
-
-    public void TestTemp()
-    {
-        Debug.Log("YAY");
     }
 }

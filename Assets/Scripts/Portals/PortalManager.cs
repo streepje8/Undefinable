@@ -24,6 +24,16 @@ public class PortalManager : Singleton<PortalManager>
         Instance = this;
     }
 
+    private void LateUpdate()
+    {
+        ReleaseAllTextures(); //Make all textures availible again at the end of each frame
+    }
+
+    /// <summary>
+    /// Retrieves a texture from the texture pool
+    /// </summary>
+    /// <returns>an unused texture</returns>
+    /// <exception cref="OverflowException"></exception>
     public PoolItem GetTexture()
     {
         foreach (var poolItem in pool)
@@ -34,7 +44,7 @@ public class PortalManager : Singleton<PortalManager>
                 return poolItem;
             }
         }
-        
+
         if (pool.Count >= maxTexturePoolSize)
         {
             Debug.LogError("Pool is full!");
@@ -42,15 +52,22 @@ public class PortalManager : Singleton<PortalManager>
         }
         var newPoolItem = CreateTexture();
         pool.Add(newPoolItem);
-        //Debug.Log($"New RenderTexture created, pool is now {pool.Count} items big.");
         newPoolItem.Used = true;
         return newPoolItem;
     }
+    
+    /// <summary>
+    /// Makes a texture availble again in the pool
+    /// </summary>
+    /// <param name="item">the texture to release</param>
     public void ReleaseTexture(PoolItem item)
     {
         item.Used = false;
     }
 
+    /// <summary>
+    /// Makes all textures availble in the pool again
+    /// </summary>
     public void ReleaseAllTextures()
     {
         foreach (var poolItem in pool)
@@ -59,6 +76,10 @@ public class PortalManager : Singleton<PortalManager>
         }
     }
 
+    /// <summary>
+    /// Creates a new rendertexture for the pool at screen resolution, this can be turned down to save performance if we need to
+    /// </summary>
+    /// <returns>The created texture</returns>
     private PoolItem CreateTexture()
     {
         var newTexture = new RenderTexture(Screen.width, Screen.height, 24, RenderTextureFormat.DefaultHDR);
@@ -70,12 +91,20 @@ public class PortalManager : Singleton<PortalManager>
             Used = false
         };
     }
+    
+    /// <summary>
+    /// Deletes a created texture from VRAM (and also from existance)
+    /// </summary>
+    /// <param name="item">The texture to delete</param>
     private void DestroyTexture(PoolItem item)
     {
-        item.Texture.Release();
-        Destroy(item.Texture);
+        item.Texture.Release(); //Remove it form the VRAM
+        Destroy(item.Texture); //Remove the pointer from the RAM
     }
 
+    /// <summary>
+    /// When the scene ends or the game ends all textures get cleaned up.
+    /// </summary>
     private void OnDestroy()
     {
         foreach (var poolItem in pool)
