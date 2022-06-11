@@ -27,7 +27,6 @@ public class Teleportable : MonoBehaviour
     /// <param name="rotationChange">The rotational change</param>
     public void OnTeleport(Portal sender, Portal dest, Vector3 positionChange, Quaternion rotationChange)
     {
-        teleported = true;
         lastPositionChange = positionChange;
         lastRotationChange = rotationChange;
 
