@@ -14,6 +14,10 @@ public class EventOnInvisible : MonoBehaviour
     
     void Start()
     {
+        foreach (InvisibleChange change in changes)
+        {
+            change.OnChangeCondition.Init();
+        }
         rend = GetComponent<Renderer>();
         if (rend == null)
         {
@@ -49,7 +53,9 @@ public class EventOnInvisible : MonoBehaviour
     {
         //This is not needed in the final build since scriptable objects are not saved anyway, but its nice for debugging
         foreach (InvisibleChange change in changes)
-            change.OnChangeCondition.isSet = false;
+        {
+            change.OnChangeCondition.SetFlag(false);
+        }            
     }
 }
 

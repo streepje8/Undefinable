@@ -30,6 +30,10 @@ public class TimelinePlayer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts playing a timeline via this player
+    /// </summary>
+    /// <param name="timeline">The timeline you want to play</param>
     public void PlayTimeline(Timeline timeline)
     {
         ActiveTimeline at = gameObject.AddComponent<ActiveTimeline>();
