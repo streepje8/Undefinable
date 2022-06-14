@@ -29,7 +29,7 @@ public class EventOnInvisible : MonoBehaviour
     
     void Update()
     {
-        if(!rend.isVisible)
+        if (!rend.isVisible)
         {
             if(wasVisible)
             {
