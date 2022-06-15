@@ -35,11 +35,21 @@ public class EventOnInvisible : MonoBehaviour
             {
                 if(changes.Count > index)
                 {
-                    if (changes[index].OnChangeEvent == null || (changes[index].OnChangeCondition == null || changes[index].OnChangeCondition.isSet))
+                    if (changes[index].OnChangeEvent == null)
+                    {
+                        index++;
+                        return;
+                    }
+                    bool canExecute = true;
+                    if(changes[index].OnChangeCondition != null)
+                    {
+                        canExecute = changes[index].OnChangeCondition.isSet;
+                    }
+                    if (canExecute)
                     {
                         changes[index].OnChangeEvent?.Raise();
                         index++;
-                    }
+                    }                        
                 }
                 wasVisible = false;
             }
