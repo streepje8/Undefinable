@@ -61,11 +61,13 @@ public class EventOnInvisible : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+#if UNITY_EDITOR
         //This is not needed in the final build since scriptable objects are not saved anyway, but its nice for debugging
         foreach (InvisibleChange change in changes)
         {
             change.OnChangeCondition?.SetFlag(false);
-        }            
+        }
+#endif
     }
 }
 
