@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9950b9167435f840b424748c9cbb02b, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  events:
+  - triggerTime: 5
+    type: 1
+    toTrigger: {fileID: 0}
+    flag: {fileID: 11400000, guid: 9dcc70785dc0cf94cbb041568e3a0d24, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
