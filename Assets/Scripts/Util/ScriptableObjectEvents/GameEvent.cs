@@ -10,14 +10,14 @@ using UnityEngine;
 
 namespace Openverse.Events
 {
-    [CreateAssetMenu(fileName = "New Game Event", menuName = "Openverse/Scriptable Object System/Game Event", order = 99)]
+    [CreateAssetMenu(fileName = "New Game Event", menuName = "Custom/Game Event", order = 99)]
     public class GameEvent : ScriptableObject
     {
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>
-        private readonly List<GameEventListener> eventListeners = 
-            new List<GameEventListener>();
+        private readonly List<GameEventListnerGeneric> eventListeners = 
+            new List<GameEventListnerGeneric>();
 
         public void Raise()
         {
@@ -25,13 +25,13 @@ namespace Openverse.Events
                 eventListeners[i].OnEventRaised();
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void RegisterListener(GameEventListnerGeneric listener)
         {
             if (!eventListeners.Contains(listener))
                 eventListeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener)
+        public void UnregisterListener(GameEventListnerGeneric listener)
         {
             if (eventListeners.Contains(listener))
                 eventListeners.Remove(listener);

@@ -10,25 +10,12 @@ using UnityEngine.Events;
 
 namespace Openverse.Events
 {
-    public class GameEventListener : MonoBehaviour
+    public class UnityEventListener : GameEventListnerGeneric
     {
-        [Tooltip("Event to register with.")]
-        public GameEvent Event;
-
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent Response;
 
-        private void OnEnable()
-        {
-            Event.RegisterListener(this);
-        }
-
-        private void OnDisable()
-        {
-            Event.UnregisterListener(this);
-        }
-
-        public void OnEventRaised()
+        public override void OnEventRaised()
         {
             Response.Invoke();
         }
