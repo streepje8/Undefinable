@@ -291,8 +291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18490661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 2.0657446, y: 3.0756001, z: 2}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0}
+  m_LocalScale: {x: 2.0657446, y: 3.483298, z: 2}
   m_Children: []
   m_Father: {fileID: 1190614934}
   m_RootOrder: 0
@@ -1334,8 +1334,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onClick: {fileID: 0}
-  hoverStart: {fileID: 11400000, guid: baf7591df991449438741f2c6e01e654, type: 2}
-  hoverEnd: {fileID: 11400000, guid: 137c5957b6cf56c409bbd7efeff04e14, type: 2}
+  hoverStart: {fileID: 0}
+  hoverEnd: {fileID: 0}
 --- !u!114 &301183990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 137c5957b6cf56c409bbd7efeff04e14, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: baf7591df991449438741f2c6e01e654, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -1979,8 +1979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changes:
-  - OnChangeEvent: {fileID: 11400000, guid: 658a2346dd496d94d865d357f918cca7, type: 2}
-    OnChangeCondition: {fileID: 11400000, guid: 9dcc70785dc0cf94cbb041568e3a0d24, type: 2}
+  - OnChangeEvent: {fileID: 0}
+    OnChangeCondition: {fileID: 0}
 --- !u!65 &419741598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2741,8 +2741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changes:
-  - OnChangeEvent: {fileID: 11400000, guid: 792adf16f16338841b825bc040363c1c, type: 2}
-    OnChangeCondition: {fileID: 11400000, guid: 6f6b2d36caa205d4592c486d5c222941, type: 2}
+  - OnChangeEvent: {fileID: 0}
+    OnChangeCondition: {fileID: 0}
 --- !u!64 &542927632
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2904,7 +2904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 658a2346dd496d94d865d357f918cca7, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -3031,7 +3031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playOnAwake: 1
-  rootTimeline: {fileID: 11400000, guid: 39e1ca272002aa1438bb0da59a1d69d9, type: 2}
+  rootTimeline: {fileID: 0}
   animators: []
 --- !u!4 &589463747
 Transform:
@@ -4157,8 +4157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changes:
-  - OnChangeEvent: {fileID: 11400000, guid: 68d16638f40abe64a884b8cfc5822659, type: 2}
-    OnChangeCondition: {fileID: 11400000, guid: 9dcc70785dc0cf94cbb041568e3a0d24, type: 2}
+  - OnChangeEvent: {fileID: 0}
+    OnChangeCondition: {fileID: 0}
 --- !u!65 &900955435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4862,7 +4862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 68d16638f40abe64a884b8cfc5822659, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -5621,8 +5621,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208360645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 2.0657446, y: 3.0756001, z: 2}
+  m_LocalPosition: {x: 0, y: 1.72, z: 0}
+  m_LocalScale: {x: 2.0657446, y: 3.483298, z: 2}
   m_Children: []
   m_Father: {fileID: 1024242686}
   m_RootOrder: 0
@@ -6852,8 +6852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changes:
-  - OnChangeEvent: {fileID: 11400000, guid: d44444e3f68b78540a0142ab25dcbd90, type: 2}
-    OnChangeCondition: {fileID: 11400000, guid: 9dcc70785dc0cf94cbb041568e3a0d24, type: 2}
+  - OnChangeEvent: {fileID: 0}
+    OnChangeCondition: {fileID: 0}
 --- !u!65 &1483409676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8012,6 +8012,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564876763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564876765}
+  - component: {fileID: 1564876764}
+  m_Layer: 0
+  m_Name: PortalCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1564876764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564876763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 4, z: 0.76}
+  m_Center: {x: -1.5, y: 4.7, z: 2.21}
+--- !u!4 &1564876765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564876763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581134547
 GameObject:
   m_ObjectHideFlags: 0
@@ -8358,7 +8402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.69
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8366,23 +8410,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.42
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8390,7 +8434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -9370,7 +9414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: d44444e3f68b78540a0142ab25dcbd90, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -10007,7 +10051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 792adf16f16338841b825bc040363c1c, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
