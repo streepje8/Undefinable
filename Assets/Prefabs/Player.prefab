@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 8857287205354305863}
   - component: {fileID: 8857287205354305862}
   - component: {fileID: 8857287205354305857}
+  - component: {fileID: 1393783628}
+  - component: {fileID: 1393783629}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -180,6 +182,34 @@ MonoBehaviour:
   _cs: {fileID: 11400000, guid: 1eeb5dc82bfd85d428224eb45f4247c5, type: 2}
   _body: {fileID: 8857287205698737724}
   _offset: -90
+--- !u!114 &1393783628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857287205354305861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0461731e997e94a4d856a8086bdf17f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+--- !u!114 &1393783629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857287205354305861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a4cf79aa4be3c499c064b57bf8d171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &8857287205698737718
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +222,7 @@ GameObject:
   - component: {fileID: 8857287205698737713}
   - component: {fileID: 8857287205698737712}
   - component: {fileID: 8857287205698737719}
+  - component: {fileID: 1333991839}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -265,3 +296,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
+--- !u!114 &1333991839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857287205698737718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15966277e4558b642bf48fb6cb1222ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleported: 0
+  lastRotationChange: {x: 0, y: 0, z: 0, w: 0}
+  lastPositionChange: {x: 0, y: 0, z: 0}

@@ -13,9 +13,11 @@ using System;
 // Does as of now not handle slopes, stairs or such things well.
 // <summary>
 
+[RequireComponent(typeof(CapsuleCollider), typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour, ITeleportListener {
     [SerializeField] ControlScheme _input;
     [SerializeField] Rigidbody _rb;
+    [SerializeField] private CapsuleCollider capsuleCollider;
     [SerializeField] Transform _orientation;
     [SerializeField] float _jumpStrength = 7, _movespeed = 150, _airMultiplier = .1f, _castDistance = 1.02f, _drag = 5;
     bool _grounded;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour, ITeleportListener {
 
     private void Start() {
         _rb.freezeRotation = true;
+        capsuleCollider = GetComponent<CapsuleCollider>();
     }
 
     // Update is called once per frame
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour, ITeleportListener {
 
     //Check if on ground
     void GroundCheck() {
-        _grounded = Physics.Raycast(transform.position, Vector3.down, _castDistance);
+        _grounded = Physics.SphereCast(transform.position, capsuleCollider.radius,Vector3.down, out RaycastHit hit, _castDistance);
         Debug.DrawRay(transform.position, Vector3.down * _castDistance, Color.green);
     }
 
