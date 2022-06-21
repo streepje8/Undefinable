@@ -9,12 +9,12 @@ namespace Openverse.Events
         public GameEvent Event;
         private void OnEnable()
         {
-            Event.RegisterListener(this);
+            Event?.RegisterListener(this);
         }
 
         private void OnDisable()
         {
-            Event.UnregisterListener(this);
+            Event?.UnregisterListener(this);
         }
 
         public abstract void OnEventRaised();
