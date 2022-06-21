@@ -10,6 +10,6 @@ public class SineAnimator : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.Euler((amount * Mathf.Sin(Time.time * (speed * Mathf.PI))) + offset);        
+        transform.localRotation = Quaternion.Euler((amount * Mathf.Sin(Time.time * (speed * Mathf.PI))) + offset);        
     }
 }
