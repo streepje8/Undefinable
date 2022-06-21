@@ -46,24 +46,13 @@ public class Portal : MonoBehaviour
                 {
                     Vector3 altLocation = TransformPositionBetweenPortals(this, TwinPortal, teleportable.transform.position);
                     Quaternion altRotation = TransformRotationBetweenPortals(this, TwinPortal, teleportable.transform.rotation);
-                    CharacterController cont = teleportable.GetComponent<CharacterController>(); //Since you can't simply teleport a character controller without disabling it
-                    if (cont != null)
-                    {
-                        cont.enabled = false;
-                        teleportable.transform.position = altLocation;
-                        teleportable.transform.rotation = altRotation;
-                        cont.enabled = true;
-                    }
-                    else
-                    {
-                        teleportable.transform.position = altLocation;
-                        teleportable.transform.rotation = altRotation;
-                    }
+                    teleportable.transform.position = altLocation;
+                    teleportable.transform.rotation = altRotation;
                     teleportable.OnTeleport(this, TwinPortal, TransformPositionBetweenPortals(this, TwinPortal, Vector3.zero), TransformRotationBetweenPortals(this, TwinPortal, Quaternion.identity));
-                    ITeleportListener[] bois = teleportable.GetComponents<ITeleportListener>();
-                    for(int j = 0; j < bois.Length; j++)
+                    ITeleportListener[] bois = teleportable.GetComponentsInChildren<ITeleportListener>();
+                    for (int j = 0; j < bois.Length; j++)
                     {
-                        bois[j].OnTeleport(TransformPositionBetweenPortals(this, TwinPortal, Vector3.zero), TransformRotationBetweenPortals(this,TwinPortal,Quaternion.identity));
+                        bois[j].OnTeleport(this, TwinPortal);
                     }
                     ableToTeleport.Remove(teleportable);
                 }
@@ -174,8 +163,8 @@ public class Portal : MonoBehaviour
     public static Quaternion TransformRotationBetweenPortals(Portal sender, Portal target, Quaternion rotation)
     {
         return
-            target.transform.rotation *
+            Quaternion.Euler(0,180,0) * (target.transform.rotation *
             (Quaternion.Inverse(sender.transform.rotation) *
-            rotation);
+            rotation));
     }
 }

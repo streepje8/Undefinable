@@ -13,7 +13,7 @@ using System;
 // Does as of now not handle slopes, stairs or such things well.
 // <summary>
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, ITeleportListener {
     [SerializeField] ControlScheme _input;
     [SerializeField] Rigidbody _rb;
     [SerializeField] Transform _orientation;
@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour {
         FetchXYInput();
         MovePlayer();
         LimitSpeed();
-
         if (Input.GetKeyDown(_input.inputs[0].inputValue) && _grounded) Jump();
     }
 
@@ -85,4 +84,6 @@ public class PlayerController : MonoBehaviour {
 
     int GetIntValue(KeyCode input) { return Convert.ToInt32(Input.GetKey(input)); }
 
+    public void OnTeleport(Portal sender, Portal reciepient)
+    {}
 }

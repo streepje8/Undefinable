@@ -12,5 +12,5 @@ public interface ITeleportListener
     /// </summary>
     /// <param name="positionChange">The change in position that the object had</param>
     /// <param name="rotationChange">The change in rotation that the object had</param>
-    void OnTeleport(Vector3 positionChange, Quaternion rotationChange);   
+    void OnTeleport(Portal sender, Portal reciepient);   
 }

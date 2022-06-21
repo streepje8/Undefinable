@@ -16,6 +16,7 @@ namespace Undefinable.Data {
                 try {
                     //Modify obj with data you need
                     JsonUtility.FromJsonOverwrite(File.ReadAllText(Application.persistentDataPath + "/" + fileName), obj);
+                    
                 }
                 catch {
                     // If there's something wrong with the remap file,
@@ -23,14 +24,13 @@ namespace Undefinable.Data {
                     Debug.LogWarning("Oh no, error loading data");
                     // ¯\_(?)_/¯ <(Well, I guess this is it!)
                     SaveData(fileName, obj);
-                    return obj;
                 }
             }
             else {
                 //Generate new savedata
                 SaveData(fileName, obj);
-                return obj;
             }
+            return obj;
         }
 
         /// <summary>

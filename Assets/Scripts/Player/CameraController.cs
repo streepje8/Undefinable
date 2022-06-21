@@ -16,7 +16,7 @@ using Undefinable.Input;
 /// 
 /// </summary>
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour, ITeleportListener
 {
     [SerializeField] ControlScheme _cs;
     [SerializeField] Transform _body;
@@ -49,5 +49,11 @@ public class CameraController : MonoBehaviour
         //Rotate camera and body for movement
         transform.rotation = Quaternion.Euler(_cameraInput.y, _cameraInput.x, 0);
         _body.rotation = Quaternion.Euler(0, _cameraInput.x +  _offset, 0);
+    }
+
+    public void OnTeleport(Portal sender, Portal reciepient)
+    {
+        _cameraInput.x = transform.rotation.eulerAngles.y;
+        _cameraInput.y = transform.rotation.eulerAngles.x;
     }
 }
