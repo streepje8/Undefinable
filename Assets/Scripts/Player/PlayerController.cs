@@ -37,8 +37,13 @@ public class PlayerController : MonoBehaviour {
 
     void FetchXYInput() {
         //Convert input to something we can use, Clamp values so that if both KB+Joystick is used it doesn't go out of range.
-        _inputAxis = new Vector2(-Mathf.Clamp(-GetIntValue(_input.inputs[3].inputValue) + GetIntValue(_input.inputs[4].inputValue) +
-            Input.GetAxis("Horizontal"), -1, 1), Mathf.Clamp(-GetIntValue(_input.inputs[2].inputValue) + GetIntValue(_input.inputs[1].inputValue) + Input.GetAxis("Vertical"), -1, 1));
+        _inputAxis = new Vector2(
+            -Mathf.Clamp(-GetIntValue(_input.inputs[3].inputValue) + 
+            GetIntValue(_input.inputs[4].inputValue) +
+            Input.GetAxis("Horizontal"), -1, 1), 
+            Mathf.Clamp(-GetIntValue(_input.inputs[2].inputValue) + 
+            GetIntValue(_input.inputs[1].inputValue) + Input.GetAxis("Vertical"), -1, 1)
+        );
     }
 
     // Something that moves the player around, could be a little more compact with inline statements but tired boy hours :)

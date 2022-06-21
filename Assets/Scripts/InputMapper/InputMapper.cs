@@ -78,7 +78,7 @@
         /// <param name="target">Which action it should be saved to</param>
         /// <returns></returns>
         IEnumerator FetchInput(string target) {
-            print("mapping..");
+            Debug.Log("mapping..");
             bool mapping = true;
 
             while (mapping) {

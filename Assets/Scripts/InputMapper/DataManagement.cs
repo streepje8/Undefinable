@@ -1,5 +1,4 @@
-namespace Undefinable.Data
-{
+namespace Undefinable.Data {
 
     using System.Collections;
     using System.Collections.Generic;
@@ -13,7 +12,7 @@ namespace Undefinable.Data
         /// <param name="fileName">File name (Include filetype)</param>
         /// <param name="obj">Where to load the data into</param>
         public static object LoadData(string fileName, object obj) {
-            if (File.Exists(Application.persistentDataPath + "/" + fileName)) { 
+            if (File.Exists(Application.persistentDataPath + "/" + fileName)) {
                 try {
                     //Modify obj with data you need
                     JsonUtility.FromJsonOverwrite(File.ReadAllText(Application.persistentDataPath + "/" + fileName), obj);
@@ -21,11 +20,17 @@ namespace Undefinable.Data
                 catch {
                     // If there's something wrong with the remap file,
                     // Ignore and generate a new one with the current mappings.
+                    Debug.LogWarning("Oh no, error loading data");
+                    // ¯\_(?)_/¯ <(Well, I guess this is it!)
+                    SaveData(fileName, obj);
+                    return obj;
                 }
             }
-            //Generate new savedata
-            SaveData(fileName, obj);
-            return obj;
+            else {
+                //Generate new savedata
+                SaveData(fileName, obj);
+                return obj;
+            }
         }
 
         /// <summary>

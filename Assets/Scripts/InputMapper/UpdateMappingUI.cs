@@ -18,7 +18,11 @@ public class UpdateMappingUI : MonoBehaviour {
 
     public void Execute() {
         //Make sure both are available to prevent errors.
-        if (!_cs || !_text) return;
+        if (!_cs || !_text) {
+            Debug.LogError("Both objects are not present, please assign these");
+            return;
+        }
+            
 
         //This is a bit funky, but it's a way to get the current mapping for the control scheme
         //There needs to be a thing that shows keycodes instead of numbers, I'm really just not sure how...
