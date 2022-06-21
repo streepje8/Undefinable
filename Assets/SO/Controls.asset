@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce993f5f3a01cc4e8247eea2ec8d462, type: 3}
   m_Name: Controls
   m_EditorClassIdentifier: Assembly-CSharp:Undefinable.Input:SpawnManagerScriptableObject
-  jump: 32
-  forward: 119
-  backward: 97
-  left: 115
-  right: 100
-  interact: 323
+  inputs:
+  - inputName: Jump
+    inputValue: 32
+  - inputName: Forward
+    inputValue: 119
+  - inputName: Backward
+    inputValue: 115
+  - inputName: Left
+    inputValue: 97
+  - inputName: Right
+    inputValue: 100
+  - inputName: Interact
+    inputValue: 323
   invertedX: 0
   invertedY: 0
   sensivity: 3

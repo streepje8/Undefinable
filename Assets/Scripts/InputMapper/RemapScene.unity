@@ -409,7 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246dbbbe6a089614c9495462517abaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controls: {fileID: 11400000, guid: 1eeb5dc82bfd85d428224eb45f4247c5, type: 2}
+  controls: {fileID: 11400000, guid: e2c4cea7099e03442854f0074322618a, type: 2}
   configName: controls.config
 --- !u!4 &397141390
 Transform:

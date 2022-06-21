@@ -89,7 +89,11 @@
                     // The ToLower could be problematic, Maybe use an enum to lock the amount of values we can set.
                     // Could've probably used a dictionary instead? Not sure.
                     // The team wanted remapable buttons so here it is.
-                    controls.GetType().GetField(target.ToLower()).SetValue(controls, value);
+                    inputtype type = controls.inputs.Find(x => x.inputName.Equals(target.ToLower(),System.StringComparison.OrdinalIgnoreCase));
+                    int oldPosition = controls.inputs.IndexOf(type);
+                    controls.inputs.Remove(type);
+                    type.inputValue = value;
+                    controls.inputs.Insert(oldPosition, type);
 
                     mapping = false;
                 }
