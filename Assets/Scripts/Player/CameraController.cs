@@ -21,6 +21,7 @@ public class CameraController : MonoBehaviour, ITeleportListener
     [SerializeField] ControlScheme _cs;
     [SerializeField] Transform _body;
     [SerializeField] float _offset = -90;
+    private int frameskip = 0;
     Vector2 _cameraInput;
     Vector2 _invertedValue;
 
@@ -44,7 +45,13 @@ public class CameraController : MonoBehaviour, ITeleportListener
         //Correct all the input
         _cameraInput.y -= Input.GetAxis("Mouse Y") * _cs.sensivity * _invertedValue.y;
         _cameraInput.x += Input.GetAxis("Mouse X") * _cs.sensivity * _invertedValue.x;
-        _cameraInput.y = Mathf.Clamp(_cameraInput.y, -90f, 90);
+        if (frameskip < 1)
+        {
+            _cameraInput.y = Mathf.Clamp(_cameraInput.y, -90f, 90);
+        } else
+        {
+            frameskip--;
+        }
        
         //Rotate camera and body for movement
         transform.rotation = Quaternion.Euler(_cameraInput.y, _cameraInput.x, 0);
@@ -55,5 +62,10 @@ public class CameraController : MonoBehaviour, ITeleportListener
     {
         _cameraInput.x = transform.rotation.eulerAngles.y;
         _cameraInput.y = transform.rotation.eulerAngles.x;
+        if(_cameraInput.y > 90)
+        {
+            _cameraInput.y = _cameraInput.y % 90 - 90;
+        }
+        Debug.Log(_cameraInput.y);
     }
 }
