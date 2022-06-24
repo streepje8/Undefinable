@@ -258,7 +258,7 @@ MonoBehaviour:
   _jumpStrength: 7
   _movespeed: 150
   _airMultiplier: 0.1
-  _castDistance: 1.02
+  _castDistance: 0.8
   _drag: 5
 --- !u!54 &8857287205698737719
 Rigidbody:
