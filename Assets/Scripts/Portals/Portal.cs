@@ -153,7 +153,7 @@ public class Portal : MonoBehaviour
     /// <returns>the translated point</returns>
     public static Vector3 TransformPositionBetweenPortals(Portal sender, Portal target, Vector3 position)
     {
-        return target.transform.position + target.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * (position - sender.transform.position)); //position - sender.transform.position
+        return target.transform.position + Quaternion.Euler(0,180,0) * target.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * (position - sender.transform.position)); //position - sender.transform.position
     }
 
     /// <summary>
