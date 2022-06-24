@@ -55,6 +55,7 @@ public class Portal : MonoBehaviour
                         bois[j].OnTeleport(this, TwinPortal);
                     }
                     ableToTeleport.Remove(teleportable);
+
                 }
             }
         }   
