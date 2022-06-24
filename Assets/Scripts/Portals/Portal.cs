@@ -13,7 +13,8 @@ public class Portal : MonoBehaviour
     private readonly Matrix4x4 cullingProjectionMatrix = Matrix4x4.Perspective(60, 1, 1.95f, 1000f);
     private Matrix4x4 cullingWorldToCameraMatrix;
     private List<Teleportable> ableToTeleport = new List<Teleportable>();
-    
+    private bool canTeleport = true;
+
     void Start()
     {
         rend = GetComponentInChildren<MeshRenderer>();
@@ -37,7 +38,7 @@ public class Portal : MonoBehaviour
     //All the code in the fixedupdate is related to teleporting the objects inside of the portal
     private void FixedUpdate()
     {
-        if(rend.isVisible) //You can't teleport in portals you can't see, if this becomes an issue, remove this line
+        if(rend.isVisible && canTeleport) //You can't teleport in portals you can't see, if this becomes an issue, remove this line
         {
             for (int i = ableToTeleport.Count - 1; i >= 0; i--)
             {
@@ -55,7 +56,7 @@ public class Portal : MonoBehaviour
                         bois[j].OnTeleport(this, TwinPortal);
                     }
                     ableToTeleport.Remove(teleportable);
-
+                    TwinPortal.canTeleport = false;
                 }
             }
         }   
@@ -125,6 +126,7 @@ public class Portal : MonoBehaviour
         {
             ableToTeleport.Remove(tel);
         }
+        canTeleport = true;
     }
 
     /////////////////////////////////////////////////
@@ -151,7 +153,7 @@ public class Portal : MonoBehaviour
     /// <returns>the translated point</returns>
     public static Vector3 TransformPositionBetweenPortals(Portal sender, Portal target, Vector3 position)
     {
-        return target.transform.position + target.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * (position - sender.transform.position)); //position - sender.transform.position
+        return target.transform.position + Quaternion.Euler(0,180,0) * target.transform.rotation * (Quaternion.Inverse(sender.transform.rotation) * (position - sender.transform.position)); //position - sender.transform.position
     }
 
     /// <summary>
