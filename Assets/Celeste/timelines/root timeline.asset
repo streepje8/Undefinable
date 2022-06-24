@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9950b9167435f840b424748c9cbb02b, type: 3}
   m_Name: root timeline
   m_EditorClassIdentifier: 
-  events: []
+  events:
+  - triggerTime: 1
+    type: 1
+    toTrigger: {fileID: 0}
+    flag: {fileID: 11400000, guid: 736cb31eb95daff45999bf3a61879827, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
