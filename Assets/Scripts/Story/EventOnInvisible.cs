@@ -38,13 +38,16 @@ public class EventOnInvisible : MonoBehaviour
                     if (changes[index].OnChangeEvent == null)
                     {
                         index++;
+                        Debug.Log("BROKEN");
                         return;
                     }
                     bool canExecute = true;
                     if(changes[index].OnChangeCondition != null)
                     {
                         canExecute = changes[index].OnChangeCondition.isSet;
+                        Debug.Log("NO");
                     }
+                    Debug.Log(canExecute);
                     if (canExecute)
                     {
                         changes[index].OnChangeEvent?.Raise();

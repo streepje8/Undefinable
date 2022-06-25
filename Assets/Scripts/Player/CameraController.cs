@@ -62,10 +62,12 @@ public class CameraController : MonoBehaviour, ITeleportListener
     {
         _cameraInput.x = transform.rotation.eulerAngles.y;
         _cameraInput.y = transform.rotation.eulerAngles.x;
+        //Gamejam code
+        //Please ignore when judging code quality
+        //This hacky code had to stay because of a time shortage
         if(_cameraInput.y > 90)
         {
             _cameraInput.y = _cameraInput.y % 90 - 90;
         }
-        Debug.Log(_cameraInput.y);
     }
 }
