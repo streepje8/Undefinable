@@ -397,6 +397,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d841ca1b7101ad34fb03a07271491f7f, type: 3}
+--- !u!1 &338524794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4267310072044384168, guid: b5886b182e3eab54abc546b7276fca93, type: 3}
+  m_PrefabInstance: {fileID: 4033516862558765212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &338524795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338524794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 617a5f9c2d214b043be4961d92cee097, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 338524794}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &407101040
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +656,26 @@ MonoBehaviour:
   positionChange: {x: 0.5, y: 0, z: 0}
   rotationChange: {x: 0, y: 0, z: 0}
   scaleChange: {x: 0, y: 0, z: 0}
+--- !u!1 &437778757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061511267327642764, guid: b5886b182e3eab54abc546b7276fca93, type: 3}
+  m_PrefabInstance: {fileID: 4033516862558765212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &437778762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437778757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd25bb4075c2f9247be2451c37b3c95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changes:
+  - OnChangeEvent: {fileID: 11400000, guid: 617a5f9c2d214b043be4961d92cee097, type: 2}
+    OnChangeCondition: {fileID: 0}
 --- !u!1001 &450032410
 PrefabInstance:
   m_ObjectHideFlags: 0
