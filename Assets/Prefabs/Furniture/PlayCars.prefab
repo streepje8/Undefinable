@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1006562764947360834}
   - component: {fileID: 3699099499557007223}
   - component: {fileID: 7999534090137166868}
+  - component: {fileID: 7363057635030861067}
   m_Layer: 0
   m_Name: AutoBlauw
   m_TagString: Untagged
@@ -113,6 +114,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5302568919011541938, guid: 6c8a3f1e85d07b344976dd017ddd2f7d, type: 3}
+--- !u!114 &7363057635030861067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516757598722195971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15966277e4558b642bf48fb6cb1222ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleported: 0
+  lastRotationChange: {x: 0, y: 0, z: 0, w: 0}
+  lastPositionChange: {x: 0, y: 0, z: 0}
 --- !u!1 &5827326884980666928
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +174,7 @@ GameObject:
   - component: {fileID: 8634172156955657728}
   - component: {fileID: 8618934479830006455}
   - component: {fileID: 8901557856898042253}
+  - component: {fileID: 6548036559909863558}
   m_Layer: 0
   m_Name: AutoWit
   m_TagString: Untagged
@@ -258,3 +275,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6548036559909863558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180494100191242802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15966277e4558b642bf48fb6cb1222ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleported: 0
+  lastRotationChange: {x: 0, y: 0, z: 0, w: 0}
+  lastPositionChange: {x: 0, y: 0, z: 0}
