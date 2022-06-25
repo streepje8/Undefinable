@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 5879553920058411586}
   - component: {fileID: 8644873592752683278}
   - component: {fileID: 1336087764714409618}
-  - component: {fileID: 1641142157529171553}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:PlamtPlantleaf5
   m_TagString: Untagged
@@ -215,20 +214,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1641142157529171553
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641142157529171552}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 422185617804896226, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}
 --- !u!1 &5246863126990712216
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +225,6 @@ GameObject:
   - component: {fileID: 6945259257732070471}
   - component: {fileID: 7099012729668641283}
   - component: {fileID: 455535068683312616}
-  - component: {fileID: 5246863126990712217}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:PlamtPlantleaf1
   m_TagString: Untagged
@@ -311,20 +295,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5246863126990712217
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5246863126990712216}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3720681358315287346, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}
 --- !u!1 &6336640154140716650
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +306,6 @@ GameObject:
   - component: {fileID: 5581457647443650706}
   - component: {fileID: 4484483131107757016}
   - component: {fileID: 2725271050993573396}
-  - component: {fileID: 6336640154140716651}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:PlamtPlantleaf3
   m_TagString: Untagged
@@ -407,20 +376,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6336640154140716651
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6336640154140716650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8180426264354153047, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}
 --- !u!1 &7208793543926728098
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +387,6 @@ GameObject:
   - component: {fileID: 5600492357699852120}
   - component: {fileID: 1283189976549096263}
   - component: {fileID: 1533744712061018934}
-  - component: {fileID: 7208793543926728099}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:PlamtPlantleaf2
   m_TagString: Untagged
@@ -503,20 +457,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7208793543926728099
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7208793543926728098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2740519515963284272, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}
 --- !u!1 &7746175783826782622
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +468,6 @@ GameObject:
   - component: {fileID: 6042372535911431539}
   - component: {fileID: 5255588688355336481}
   - component: {fileID: 3397117181163147482}
-  - component: {fileID: 7746175783826782623}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:Plantleaf6Plamt
   m_TagString: Untagged
@@ -599,20 +538,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7746175783826782623
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746175783826782622}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1894345231481881929, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}
 --- !u!1 &7847461865490495474
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +549,6 @@ GameObject:
   - component: {fileID: 2567966540112418871}
   - component: {fileID: 7545442630182936917}
   - component: {fileID: 4410365528661591420}
-  - component: {fileID: 7847461865490495475}
   m_Layer: 0
   m_Name: UndefinedPlantVer4_low:PlamtPlantleaf4
   m_TagString: Untagged
@@ -695,17 +619,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7847461865490495475
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847461865490495474}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5817190331508521550, guid: a25b68e2c400e214da12aec38b87cf35, type: 3}

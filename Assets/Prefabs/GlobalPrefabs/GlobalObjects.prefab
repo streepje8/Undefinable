@@ -175,11 +175,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3417250445475969809, guid: fedd20dd153c9be4d995be887fe35a16, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 344184389500931049}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedd20dd153c9be4d995be887fe35a16, type: 3}
 --- !u!4 &344184389668017606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3417250445309404473, guid: fedd20dd153c9be4d995be887fe35a16, type: 3}
+  m_PrefabInstance: {fileID: 3146409531019620607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &344184389500931049 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3417250445475969814, guid: fedd20dd153c9be4d995be887fe35a16, type: 3}
   m_PrefabInstance: {fileID: 3146409531019620607}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4432818234322806047
@@ -255,6 +264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 344184387935599692}
     m_Modifications:
+    - target: {fileID: 4123885671111305548, guid: 6bd36bf265dad224cb422fab9745fa88, type: 3}
+      propertyPath: rootTimeline
+      value: 
+      objectReference: {fileID: 11400000, guid: c56e43f0a3dd89742ac25802682fb465, type: 2}
     - target: {fileID: 4123885671111305549, guid: 6bd36bf265dad224cb422fab9745fa88, type: 3}
       propertyPath: m_RootOrder
       value: 3
