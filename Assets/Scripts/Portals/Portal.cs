@@ -88,7 +88,7 @@ public class Portal : MonoBehaviour
         }
 
         //Render my own texture
-        cam.enabled = true;
+        cam.gameObject.SetActive(true);
         cam.projectionMatrix = pcam.cam.projectionMatrix; //Makes the perspective match
         //Calculate where the camera is supposed to be on the other end of the portal
         relativePosition = transform.InverseTransformPoint(campos);
@@ -101,8 +101,8 @@ public class Portal : MonoBehaviour
         cam.targetTexture = texture.Texture;
         cam.Render(); //Actually render the camera on to a texture
         mat.SetTexture("_MainTex", texture.Texture); //Apply the texture to the portal
-        cam.targetTexture = null;   
-        cam.enabled = false;
+        cam.targetTexture = null;
+        cam.gameObject.SetActive(false);
     }
 
     private void OnDisable()

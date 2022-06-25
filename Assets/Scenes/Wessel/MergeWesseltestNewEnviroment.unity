@@ -694,6 +694,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2830975350548469808, guid: 38179e64419f82a48a174f2783f354e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830975350548469810, guid: 38179e64419f82a48a174f2783f354e4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38179e64419f82a48a174f2783f354e4, type: 3}
 --- !u!1 &330602348
@@ -885,6 +893,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432611316}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &498474156 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 344184389500931049, guid: ba9c2e1bc260ea64a989c1506d4a30a9, type: 3}
+  m_PrefabInstance: {fileID: 344184388714325370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &596595898
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,7 +2257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677909562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.28, y: 1.1, z: -2.2465606}
+  m_LocalPosition: {x: 1.28, y: 1.1, z: 3.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2429,6 +2442,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 344184389500931049, guid: ba9c2e1bc260ea64a989c1506d4a30a9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 344184389500931051, guid: ba9c2e1bc260ea64a989c1506d4a30a9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 344184389500931054, guid: ba9c2e1bc260ea64a989c1506d4a30a9, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 498474156}
     - target: {fileID: 344184389668017607, guid: ba9c2e1bc260ea64a989c1506d4a30a9, type: 3}
       propertyPath: mainCamera
       value: 
