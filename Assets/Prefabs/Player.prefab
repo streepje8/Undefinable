@@ -256,10 +256,10 @@ MonoBehaviour:
   capsuleCollider: {fileID: 0}
   _orientation: {fileID: 8857287205698737724}
   _jumpStrength: 7
-  _movespeed: 150
-  _airMultiplier: 0.1
+  _movespeed: 200
+  _airMultiplier: 0.01
   _castDistance: 0.8
-  _drag: 5
+  _drag: 10
 --- !u!54 &8857287205698737719
 Rigidbody:
   m_ObjectHideFlags: 0
