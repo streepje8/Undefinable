@@ -2,6 +2,7 @@
 	Properties{
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
 		_Emission("Emission", float) = 1
+		_Brightness("Brightness", Range(0,2)) = 1
 		_Glossiness("Smoothness", Range(0,1)) = 0.5
 		_Metallic("Metallic", Range(0,1)) = 0.0
 	}
@@ -14,6 +15,7 @@
 			#pragma target 3.0
 
 		float _Emission;
+		float _Brightness;
 		half _Glossiness;
 		half _Metallic;
 
@@ -43,8 +45,8 @@
 		void surf(Input i, inout SurfaceOutputStandard o) {
 
 			float3 value = i.worldPos;
-			o.Albedo = rand3dTo3d(value * _Time);
-			o.Emission = o.Albedo * _Emission;
+			o.Albedo = rand3dTo3d(value * _Time)* _Brightness;
+			o.Emission = o.Albedo * _Emission* _Brightness;
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 		}
