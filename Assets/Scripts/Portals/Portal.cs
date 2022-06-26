@@ -7,6 +7,7 @@ public class Portal : MonoBehaviour
 {
     public Portal TwinPortal;
     public List<Portal> visiblePortals = new List<Portal>();
+    public bool isAbleToTeleport = true;
     private MeshRenderer rend;
     private Material mat;
     private RenderTexture rt;
@@ -38,7 +39,7 @@ public class Portal : MonoBehaviour
     //All the code in the fixedupdate is related to teleporting the objects inside of the portal
     private void FixedUpdate()
     {
-        if(rend.isVisible && canTeleport) //You can't teleport in portals you can't see, if this becomes an issue, remove this line
+        if(rend.isVisible && canTeleport && isAbleToTeleport) //You can't teleport in portals you can't see, if this becomes an issue, remove this line
         {
             for (int i = ableToTeleport.Count - 1; i >= 0; i--)
             {
@@ -89,6 +90,7 @@ public class Portal : MonoBehaviour
 
         //Render my own texture
         cam.gameObject.SetActive(true);
+        //cam.enabled = true;
         cam.projectionMatrix = pcam.cam.projectionMatrix; //Makes the perspective match
         //Calculate where the camera is supposed to be on the other end of the portal
         relativePosition = transform.InverseTransformPoint(campos);
@@ -102,6 +104,7 @@ public class Portal : MonoBehaviour
         cam.Render(); //Actually render the camera on to a texture
         mat.SetTexture("_MainTex", texture.Texture); //Apply the texture to the portal
         cam.targetTexture = null;
+        //cam.enabled = false;
         cam.gameObject.SetActive(false);
     }
 

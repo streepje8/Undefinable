@@ -19,6 +19,11 @@ public class Door : MonoBehaviour
         rotation = state ? 145 : 0;
     }
 
+    public void SetInteractable(bool state)
+    {
+        interactable = state;
+    }
+
     void Update()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(rotationOffset + Vector3.up * rotation), 3f * Time.deltaTime);

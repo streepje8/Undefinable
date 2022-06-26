@@ -11,21 +11,25 @@ public class EventOnInteract : MonoBehaviour,IInteractable
 
     public void OnInteract() 
     {
-        onClick?.Raise();
+        if(enabled)
+            onClick?.Raise();
     }
 
     private int hoverState = 0;
 
     public void WhileHover() 
     {
-        if (hoverState < 1)
-            hoverStart?.Raise();
-        hoverState = 3;
+        if (enabled)
+        {
+            if (hoverState < 1)
+                hoverStart?.Raise();
+            hoverState = 3;
+        }
     }
 
     private void Update()
     {
-        if(hoverState > 0 && (hoverState - 1) < 1)
+        if (hoverState > 0 && (hoverState - 1) < 1)
             hoverEnd?.Raise();
         if (hoverState > 0)
             hoverState--;

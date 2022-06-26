@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9950b9167435f840b424748c9cbb02b, type: 3}
+  m_Name: FaseZeroTimeline
+  m_EditorClassIdentifier: 
+  events:
+  - triggerTime: 1
+    type: 3
+    toTrigger: {fileID: 0}
+    flag: {fileID: 11400000, guid: 6b830e709d03d8f4c994edb7e3a634ca, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
+  - triggerTime: 1.01
+    type: 0
+    toTrigger: {fileID: 11400000, guid: 7e02e8bdd4a9a6b42b16b9709a3db93a, type: 2}
+    flag: {fileID: 11400000, guid: 6b830e709d03d8f4c994edb7e3a634ca, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 

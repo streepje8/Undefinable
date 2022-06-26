@@ -98,7 +98,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2668726391751082364
 Transform:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2668726391751082362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.050001, y: 1.1100003, z: 2.5700011}
+  m_LocalPosition: {x: -65.646, y: 1.1100003, z: 2.5700011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2668726392569649546}
@@ -129,6 +129,7 @@ MonoBehaviour:
   TwinPortal: {fileID: 2668726391924259501}
   visiblePortals:
   - {fileID: 2668726392373296995}
+  isAbleToTeleport: 1
 --- !u!65 &2668726391751082367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2668726391924259503
 Transform:
   m_ObjectHideFlags: 0
@@ -190,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TwinPortal: {fileID: 2668726391751082365}
   visiblePortals: []
+  isAbleToTeleport: 1
 --- !u!65 &2668726391924259500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -220,7 +222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2668726392373296993
 Transform:
   m_ObjectHideFlags: 0
@@ -229,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2668726392373297006}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -20.084002, y: 1.1300002, z: -5.35}
+  m_LocalPosition: {x: -65.68, y: 1.1300002, z: -5.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2668726393459665765}
@@ -251,6 +253,7 @@ MonoBehaviour:
   TwinPortal: {fileID: 2668726392457006717}
   visiblePortals:
   - {fileID: 2668726391751082365}
+  isAbleToTeleport: 1
 --- !u!65 &2668726392373296992
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2668726392457006719
 Transform:
   m_ObjectHideFlags: 0
@@ -311,6 +314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TwinPortal: {fileID: 2668726392373296995}
   visiblePortals: []
+  isAbleToTeleport: 0
 --- !u!65 &2668726392457006716
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -709,7 +713,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
+  Event: {fileID: 11400000, guid: 7e02e8bdd4a9a6b42b16b9709a3db93a, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2668726391924259498}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2668726392457006714}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2668726392373297006}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2668726391751082362}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

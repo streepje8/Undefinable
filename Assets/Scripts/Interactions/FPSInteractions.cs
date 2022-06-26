@@ -8,7 +8,7 @@ public class FPSInteractions : MonoBehaviour
 
     void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, Mathf.Infinity, interactableLayer))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 2.5f, interactableLayer))
         {
             IInteractable[] interactables = hit.collider.gameObject.GetComponents<IInteractable>();
             if (interactables.Length > 0)
