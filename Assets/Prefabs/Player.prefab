@@ -255,7 +255,7 @@ MonoBehaviour:
   _rb: {fileID: 8857287205698737719}
   capsuleCollider: {fileID: 0}
   _orientation: {fileID: 8857287205698737724}
-  _jumpStrength: 7
+  _jumpStrength: 0
   _movespeed: 200
   _airMultiplier: 0.01
   _castDistance: 0.8

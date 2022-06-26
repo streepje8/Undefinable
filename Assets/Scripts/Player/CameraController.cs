@@ -30,6 +30,9 @@ public class CameraController : MonoBehaviour, ITeleportListener
     {
         _invertedValue.x = _cs.invertedX ? -1 : 1 ;
         _invertedValue.y = _cs.invertedY ? -1 : 1 ;
+#if UNITY_EDITOR
+        Cursor.lockState = CursorLockMode.Locked;
+#endif
     }
 
     //Capture and lock the mouse
