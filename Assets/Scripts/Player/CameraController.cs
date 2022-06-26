@@ -16,8 +16,7 @@ using Undefinable.Input;
 /// 
 /// </summary>
 
-public class CameraController : MonoBehaviour, ITeleportListener
-{
+public class CameraController : MonoBehaviour, ITeleportListener {
     [SerializeField] ControlScheme _cs;
     [SerializeField] Transform _body;
     [SerializeField] float _offset = -90;
@@ -26,13 +25,11 @@ public class CameraController : MonoBehaviour, ITeleportListener
     Vector2 _invertedValue;
 
     //Fetch and set some values.
-    private void Start()
-    {
-        _invertedValue.x = _cs.invertedX ? -1 : 1 ;
-        _invertedValue.y = _cs.invertedY ? -1 : 1 ;
-#if UNITY_EDITOR
+    private void Start() {
+        _invertedValue.x = _cs.invertedX ? -1 : 1;
+        _invertedValue.y = _cs.invertedY ? -1 : 1;
         Cursor.lockState = CursorLockMode.Locked;
-#endif
+        Cursor.visible = false;
     }
 
     //Capture and lock the mouse
@@ -44,32 +41,29 @@ public class CameraController : MonoBehaviour, ITeleportListener
     }
 
     // Limit mouse and apply to object
-    void Update() {   
+    void Update() {
         //Correct all the input
         _cameraInput.y -= Input.GetAxis("Mouse Y") * _cs.sensivity * _invertedValue.y;
         _cameraInput.x += Input.GetAxis("Mouse X") * _cs.sensivity * _invertedValue.x;
-        if (frameskip < 1)
-        {
+        if (frameskip < 1) {
             _cameraInput.y = Mathf.Clamp(_cameraInput.y, -90f, 90);
-        } else
-        {
+        }
+        else {
             frameskip--;
         }
-       
+
         //Rotate camera and body for movement
         transform.rotation = Quaternion.Euler(_cameraInput.y, _cameraInput.x, 0);
-        _body.rotation = Quaternion.Euler(0, _cameraInput.x +  _offset, 0);
+        _body.rotation = Quaternion.Euler(0, _cameraInput.x + _offset, 0);
     }
 
-    public void OnTeleport(Portal sender, Portal reciepient)
-    {
+    public void OnTeleport(Portal sender, Portal reciepient) {
         _cameraInput.x = transform.rotation.eulerAngles.y;
         _cameraInput.y = transform.rotation.eulerAngles.x;
         //Gamejam code
         //Please ignore when judging code quality
         //This hacky code had to stay because of a time shortage
-        if(_cameraInput.y > 90)
-        {
+        if (_cameraInput.y > 90) {
             _cameraInput.y = _cameraInput.y % 90 - 90;
         }
     }
