@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
 
     public void SetDoorState(bool state)
     {
-        rotation = state ? 145 : 0;
+        rotation = state ? openAngle : 0;
         if(source.clip != null)
             source.PlayOneShot(source.clip);
     }

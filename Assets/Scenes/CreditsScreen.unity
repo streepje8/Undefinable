@@ -1393,7 +1393,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2, y: -114.90003}
-  m_SizeDelta: {x: 228.59998, y: 216.4}
+  m_SizeDelta: {x: 228.59998, y: 237.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993732222
 MonoBehaviour:
@@ -1429,7 +1429,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "<b>Unity packages:</b>\n<AllSky Free>\n\r<i>rpgwhitelock</i>\n<Free Rug
-    Pack\r>\n\r<i>Azerilo</i>"
+    Pack\r>\n\r<i>Azerilo</i>\n<b>Base event system:</b>\n<Scriptable Object Events>\n\r<i>Ryan
+    Hipple, Unity Unite 2017</i>"
 --- !u!222 &1993732223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1645,7 +1646,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -295.3, y: -87.90006}
-  m_SizeDelta: {x: 272.09998, y: 66.70001}
+  m_SizeDelta: {x: 321, y: 66.70001}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2099026579
 MonoBehaviour:
@@ -1680,8 +1681,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<b>Base event system:</b>\n<Scriptable Object Events>\n\r<i>Robory Antron,
-    Unity Unite 2017</i>"
+  m_Text: "<b>Art:</b>\n<i>https://thiscatdoesnotexist.com/ \r\nhttps://thisartworkdoesnotexist.com/\r\n</i>"
 --- !u!222 &2099026580
 CanvasRenderer:
   m_ObjectHideFlags: 0

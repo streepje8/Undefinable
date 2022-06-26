@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 24742097}
   - component: {fileID: 24742096}
   - component: {fileID: 24742095}
+  - component: {fileID: 3033976386447596202}
+  - component: {fileID: 4369211252926909328}
   m_Layer: 6
   m_Name: DoorMesh
   m_TagString: Untagged
@@ -110,8 +112,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onClick: {fileID: 11400000, guid: f4e6ac12f9c735f4ba295fa41483eb77, type: 2}
-  hoverStart: {fileID: 0}
-  hoverEnd: {fileID: 0}
+  hoverStart: {fileID: 11400000, guid: ea1c1cd96f312ff41b246f127ac7e6a8, type: 2}
+  hoverEnd: {fileID: 11400000, guid: fb22a47dba1f81246b7e5208238afb42, type: 2}
+--- !u!114 &3033976386447596202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24742093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: ea1c1cd96f312ff41b246f127ac7e6a8, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 24742097}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 6542d3eb956eed14cbe0d3dbb124cb38, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4369211252926909328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24742093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: fb22a47dba1f81246b7e5208238afb42, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 24742097}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 6121f03eb020db545ab4c9ee4666e436, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &322911535
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationOffset: {x: 0, y: 0, z: 0}
-  openAngle: 145
+  openAngle: 120
   interactable: 1
 --- !u!114 &736140545
 MonoBehaviour:
@@ -671,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationOffset: {x: 0, y: -180, z: 0}
-  openAngle: 145
+  openAngle: 120
   interactable: 0
 --- !u!82 &357741041776077505
 AudioSource:
@@ -1166,11 +1224,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
---- !u!224 &344184389189947551 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6725781020714861773, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
-  m_PrefabInstance: {fileID: 6453675673492968530}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &344184388008110699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6725781021881908793, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
@@ -1179,6 +1232,11 @@ Transform:
 --- !u!95 &344184387966464049 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6725781021974406243, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
+  m_PrefabInstance: {fileID: 6453675673492968530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &344184389189947551 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6725781020714861773, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
   m_PrefabInstance: {fileID: 6453675673492968530}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7007837394419279531
