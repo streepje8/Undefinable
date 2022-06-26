@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 736140546}
   - component: {fileID: 736140545}
   - component: {fileID: 142685520057428631}
+  - component: {fileID: 1158536842}
   m_Layer: 0
   m_Name: DoorGangB
   m_TagString: Untagged
@@ -317,7 +318,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 164917f69cf194d4db25f7ba8f1b226f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -402,6 +403,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1158536842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736140543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5dcd3fe71f844aa53d28a9e09d9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e985475bfaf1b9d4a88b8b99278addbb, type: 2}
+  isRelative: 0
+  positionChange: {x: -70.143, y: 2.0239997, z: -23.094}
+  rotationChange: {x: 0, y: 0, z: 0}
+  scaleChange: {x: 1.3213, y: 1, z: 1}
 --- !u!1 &1113292692
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +447,7 @@ RectTransform:
   m_GameObject: {fileID: 1113292692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 344184389189947551}
   m_RootOrder: 1
@@ -472,8 +490,8 @@ MonoBehaviour:
     m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 125
+    m_MinSize: 0
+    m_MaxSize: 167
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -617,6 +635,7 @@ GameObject:
   - component: {fileID: 1435034605}
   - component: {fileID: 1435034606}
   - component: {fileID: 357741041776077505}
+  - component: {fileID: 154368634}
   m_Layer: 0
   m_Name: DoorGangA
   m_TagString: Untagged
@@ -665,7 +684,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 164917f69cf194d4db25f7ba8f1b226f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -750,6 +769,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &154368634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435034604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5dcd3fe71f844aa53d28a9e09d9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e985475bfaf1b9d4a88b8b99278addbb, type: 2}
+  isRelative: 0
+  positionChange: {x: -71.24, y: 2.196, z: 18.82}
+  rotationChange: {x: 0, y: 180, z: 0}
+  scaleChange: {x: 1.294575, y: 1, z: 1}
 --- !u!1 &344184387935599695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,11 +1166,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
---- !u!95 &344184387966464049 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6725781021974406243, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
-  m_PrefabInstance: {fileID: 6453675673492968530}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &344184389189947551 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6725781020714861773, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
@@ -1143,6 +1174,11 @@ RectTransform:
 --- !u!4 &344184388008110699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6725781021881908793, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
+  m_PrefabInstance: {fileID: 6453675673492968530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &344184387966464049 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6725781021974406243, guid: 9951dbc89a8ef0f41a0ef584e3437440, type: 3}
   m_PrefabInstance: {fileID: 6453675673492968530}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7007837394419279531

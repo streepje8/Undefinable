@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2668726391751082364}
   - component: {fileID: 2668726391751082365}
   - component: {fileID: 2668726391751082367}
+  - component: {fileID: 1212906417}
   m_Layer: 0
   m_Name: Portal gangB
   m_TagString: Untagged
@@ -143,6 +144,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 2.23, z: 0.3}
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &1212906417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668726391751082362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5dcd3fe71f844aa53d28a9e09d9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e985475bfaf1b9d4a88b8b99278addbb, type: 2}
+  isRelative: 0
+  positionChange: {x: -70.697, y: 1.1100003, z: 18.315}
+  rotationChange: {x: 0, y: 0, z: 0}
+  scaleChange: {x: 1, y: 1, z: 1}
 --- !u!1 &2668726391924259498
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +234,7 @@ GameObject:
   - component: {fileID: 2668726392373296993}
   - component: {fileID: 2668726392373296995}
   - component: {fileID: 2668726392373296992}
+  - component: {fileID: 1769353867}
   m_Layer: 0
   m_Name: Portal GangA
   m_TagString: Untagged
@@ -267,6 +286,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 2.23, z: 0.3}
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &1769353867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668726392373297006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c5dcd3fe71f844aa53d28a9e09d9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e985475bfaf1b9d4a88b8b99278addbb, type: 2}
+  isRelative: 0
+  positionChange: {x: -70.71, y: 0.924, z: -22.787}
+  rotationChange: {x: 0, y: 180, z: 0}
+  scaleChange: {x: 1, y: 1, z: 1}
 --- !u!1 &2668726392457006714
 GameObject:
   m_ObjectHideFlags: 0

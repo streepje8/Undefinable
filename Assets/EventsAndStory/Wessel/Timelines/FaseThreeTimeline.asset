@@ -12,4 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9950b9167435f840b424748c9cbb02b, type: 3}
   m_Name: FaseThreeTimeline
   m_EditorClassIdentifier: 
-  events: []
+  events:
+  - triggerTime: 0
+    type: 0
+    toTrigger: {fileID: 11400000, guid: 6bc7ce162604d444797440806ee6d83c, type: 2}
+    flag: {fileID: 0}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
+  - triggerTime: 0
+    type: 3
+    toTrigger: {fileID: 11400000, guid: 6bc7ce162604d444797440806ee6d83c, type: 2}
+    flag: {fileID: 11400000, guid: 65c97902dd95dfc42b576449ea52f123, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
+  - triggerTime: 0.1
+    type: 0
+    toTrigger: {fileID: 11400000, guid: e985475bfaf1b9d4a88b8b99278addbb, type: 2}
+    flag: {fileID: 11400000, guid: 65c97902dd95dfc42b576449ea52f123, type: 2}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 

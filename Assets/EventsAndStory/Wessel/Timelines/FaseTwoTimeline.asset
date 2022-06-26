@@ -14,16 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events:
   - triggerTime: 0
-    type: 0
-    toTrigger: {fileID: 11400000, guid: 2448a8f13ccc01944a0433537f05c378, type: 2}
-    flag: {fileID: 0}
+    type: 2
+    toTrigger: {fileID: 11400000, guid: fc3d353c31146e54b9f884f04f7d8e86, type: 2}
+    flag: {fileID: 11400000, guid: d6970f9096816014286448db3874f8a0, type: 2}
     timeline: {fileID: 0}
     animatorID: 0
     stateName: 
   - triggerTime: 0
     type: 0
-    toTrigger: {fileID: 11400000, guid: 95eacd10a7bff3c40bf7fc3a58864d29, type: 2}
+    toTrigger: {fileID: 11400000, guid: fc3d353c31146e54b9f884f04f7d8e86, type: 2}
     flag: {fileID: 0}
+    timeline: {fileID: 0}
+    animatorID: 0
+    stateName: 
+  - triggerTime: 0
+    type: 1
+    toTrigger: {fileID: 11400000, guid: fc3d353c31146e54b9f884f04f7d8e86, type: 2}
+    flag: {fileID: 11400000, guid: 8860a6363f907f14fa38762e92ddc46f, type: 2}
     timeline: {fileID: 0}
     animatorID: 0
     stateName: 

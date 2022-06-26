@@ -62,7 +62,7 @@ public class ActiveTimeline : MonoBehaviour
                 break;
             case TimelineEventType.FlagSetFalse:
                 if (tevent.flag != null)
-                    tevent.flag.SetFlag(true);
+                    tevent.flag.SetFlag(false);
                 break;
             case TimelineEventType.WaitForFlag:
                 if (tevent.flag != null)

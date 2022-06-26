@@ -784,6 +784,9 @@ GameObject:
   - component: {fileID: 7802053774201793562}
   - component: {fileID: 1463885699924949094}
   - component: {fileID: 972798828}
+  - component: {fileID: 972442993}
+  - component: {fileID: 972442996}
+  - component: {fileID: 6367409945187656868}
   m_Layer: 6
   m_Name: UndefinedTV_low:TV_scherm
   m_TagString: Untagged
@@ -883,7 +886,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -965,6 +968,77 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &972442993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810655070724167503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 48ffe05ed5c3ce5428c94cc98e26a9df, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 972798828}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &972442996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810655070724167503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27072fc23c5ff8a4884cd3dbf3b4565e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 48ffe05ed5c3ce5428c94cc98e26a9df, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7802053774201793562}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 90a7d7bdc7c746e4a82e95293b75d090, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6367409945187656868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2810655070724167503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd25bb4075c2f9247be2451c37b3c95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changes:
+  - OnChangeEvent: {fileID: 11400000, guid: 95eacd10a7bff3c40bf7fc3a58864d29, type: 2}
+    OnChangeCondition: {fileID: 11400000, guid: d6970f9096816014286448db3874f8a0, type: 2}
 --- !u!1 &7321575654780604767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1243,6 @@ GameObject:
   - component: {fileID: 7971542101576080078}
   - component: {fileID: 2279191411779589514}
   - component: {fileID: 1463885698882867252}
-  - component: {fileID: 852153543}
   - component: {fileID: 1285622762}
   - component: {fileID: 1285622765}
   - component: {fileID: 1285622766}
@@ -1257,21 +1330,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1434720517654531458, guid: d5fb4ddd4c27f94478cbba230b7920f8, type: 3}
---- !u!114 &852153543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828553812211373873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd25bb4075c2f9247be2451c37b3c95c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changes:
-  - OnChangeEvent: {fileID: 11400000, guid: 95eacd10a7bff3c40bf7fc3a58864d29, type: 2}
-    OnChangeCondition: {fileID: 11400000, guid: d6970f9096816014286448db3874f8a0, type: 2}
 --- !u!114 &1285622762
 MonoBehaviour:
   m_ObjectHideFlags: 0
