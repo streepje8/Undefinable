@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib UndefinedPlaneOfShame.mtl
+g default
+v -1.573939 0.437393 5.563476
+v -2.070265 0.437393 5.563477
+v -1.573939 2.805733 5.563476
+v -2.070266 2.805733 5.563476
+vt 0.154369 0.623613
+vt 0.154339 0.636944
+vt 0.092989 0.623613
+vt 0.092989 0.636944
+vn -0.000001 -0.000000 -1.000000
+vn -0.000001 -0.000000 -1.000000
+vn -0.000001 -0.000000 -1.000000
+vn -0.000001 -0.000000 -1.000000
+s off
+g pPlane1
+usemtl initialShadingGroup
+f 1/1/1 2/2/2 4/4/3 3/3/4
