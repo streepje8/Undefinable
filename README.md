@@ -1,4 +1,4 @@
-# Undefineable
+# Undefinable
 
 A small prototype of a game inspired by horror and weird-core elements where the player repeatedly goes through the same room with small differences. This was made for school and went through many iterations.
 
